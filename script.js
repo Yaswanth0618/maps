@@ -30,5 +30,4 @@ function setupMap(center) {
 
   map.addControl(directions, "top-left");
 
-  directions.setOrigin(center);
 }
