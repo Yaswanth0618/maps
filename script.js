@@ -1,18 +1,14 @@
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYWx1bHNoIiwiYSI6ImY0NDBjYTQ1NjU4OGJmMDFiMWQ1Y2RmYjRlMGI1ZjIzIn0.pngboKEPsfuC4j54XDT3VA";
-
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
   enableHighAccuracy: true
 });
-
 function successLocation(position) {
   setupMap([position.coords.longitude, position.coords.latitude]);
 }
-
 function errorLocation() {
   setupMap([-2.24, 53.48]);
 }
-
 function setupMap(center) {
   const map = new mapboxgl.Map({
     container: "map",
@@ -20,17 +16,11 @@ function setupMap(center) {
     center: center,
     zoom: 15
   });
-
   const nav = new mapboxgl.NavigationControl();
   map.addControl(nav);
-
   var directions = new MapboxDirections({
     accessToken: mapboxgl.accessToken
   });
-
   map.addControl(directions, "top-left");
-
-
 }
-
 //  "pk.eyJ1Ijoic3dpbWl0IiwiYSI6ImNqY2c3NXZkYzFoa2QycXQ1eXl1Mnd6M3EifQ.qpRE7xC08AyZfxJ56LoN7w";
